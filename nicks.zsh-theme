@@ -1,5 +1,5 @@
 # prompt style and colors based on Steve Losh's Prose theme:
-# https://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-the
+# https://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-theme
 #
 # vcs_info modifications from Bart Trojanowski's zsh prompt:
 # http://www.jukie.net/bart/blog/pimping-out-zsh-prompt
@@ -10,7 +10,7 @@
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f')
+    [ $VIRTUAL_ENV ] && echo ' - ('%F{blue}`basename $VIRTUAL_ENV`%f') '
 }
 PR_GIT_UPDATE=1
 
@@ -51,14 +51,15 @@ zstyle ':vcs_info:*:prompt:*' check-for-changes true
 PR_RST="%f"
 FMT_BRANCH="(%{$turquoise%}%b%u%c${PR_RST})"
 FMT_ACTION="(%{$limegreen%}%a${PR_RST})"
-FMT_UNSTAGED="%{$orange%} ●"
-FMT_STAGED="%{$limegreen%} ●"
+FMT_UNSTAGED="%{$orange%} ● "
+FMT_STAGED="%{$limegreen%} ● "
 
 zstyle ':vcs_info:*:prompt:*' unstagedstr   "${FMT_UNSTAGED}"
 zstyle ':vcs_info:*:prompt:*' stagedstr     "${FMT_STAGED}"
 zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
+
 
 function nicks_preexec {
     case "$2" in
@@ -87,7 +88,7 @@ function nicks_precmd {
             PR_GIT_UPDATE=1
             FMT_BRANCH="- %{$turquoise%}%b%u%c%{$hotpink%} ● ${PR_RST}"
         else
-            FMT_BRANCH="- %{$turquoise%}%b%u%c${PR_RST}"
+            FMT_BRANCH="%{$turquoise%}%b%u%c${PR_RST}"
         fi
         zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH} "
 
@@ -98,6 +99,6 @@ function nicks_precmd {
 add-zsh-hook precmd nicks_precmd
 
 PROMPT=$'
-%{$purple%}%n${PR_RST} - %{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)
+%{$purple%}%n${PR_RST}$(virtualenv_info) - %{$limegreen%}%~${PR_RST}
 > '
-RPROMPT='%{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)'
+RPROMPT='$vcs_info_msg_0_'
