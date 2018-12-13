@@ -33,7 +33,7 @@ main() {
     printf "${YELLOW}Please install zsh-theme first first.${NORMAL}\n"
     ZSH_CUSTOM=$ZSH/custom
     ZSH_NICKS_THEME=$ZSH_CUSTOM/themes/zsh-nicks-theme
-  printf "\n${ZSH}\n${ZSH_CUSTOM}\n\n${ZSH_NICKS_THEM}\n"
+    printf "\n${ZSH}\n${ZSH_CUSTOM}\n\n${ZSH_NICKS_THEME}\n"
   fi
   if [ ! -d "$ZSH" ]; then
     printf "${YELLOW}Please install oh-my-zsh first.${NORMAL}\n"
@@ -73,6 +73,7 @@ main() {
     exit 1
   }
 
+  env ln -s "$ZSH_NICKS_THEME/nicks.zsh-theme" "$ZSH_CUSTOM/theme/nicks.zsh-theme"
 
   printf "${BLUE}Looking for an existing zsh config...${NORMAL}\n"
   if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
