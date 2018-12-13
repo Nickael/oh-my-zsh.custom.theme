@@ -31,7 +31,9 @@ main() {
 
   if [ ! -n "$ZSH_NICKS_THEME" ]; then
     printf "${YELLOW}Please install zsh-theme first first.${NORMAL}\n"
+    ZSH_CUSTOM=$ZSH/custom
     ZSH_NICKS_THEME=$ZSH_CUSTOM/themes/zsh-nicks-theme
+  printf "\n${ZSH}\n${ZSH_CUSTOM}\n\n${ZSH_NICKS_THEM}\n"
   fi
   if [ ! -d "$ZSH" ]; then
     printf "${YELLOW}Please install oh-my-zsh first.${NORMAL}\n"
