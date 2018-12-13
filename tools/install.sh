@@ -73,7 +73,8 @@ main() {
     exit 1
   }
 
-  env ln -s "$ZSH_NICKS_THEME/nicks.zsh-theme" "$ZSH_CUSTOM/theme/nicks.zsh-theme"
+  printf "${ZSH_NICKS_THEME}/nicks.zsh-theme" "${ZSH_CUSTOM}/themes/nicks.zsh-theme\n\n"
+  env ln -s "$ZSH_NICKS_THEME/nicks.zsh-theme" "$ZSH_CUSTOM/themes/nicks.zsh-theme"
 
   printf "${BLUE}Looking for an existing zsh config...${NORMAL}\n"
   if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
@@ -101,6 +102,8 @@ main() {
       printf "${BLUE}Please manually change your default shell to zsh!${NORMAL}\n"
     fi
   fi
+
+  env git config --global alias.br branch && git config --global alias.co checkout && git config --global alias.ci commit && git config --global alias.st status
 
   printf "${GREEN}"
   echo "Theme installed"

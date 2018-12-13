@@ -98,3 +98,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
+alias l="ls"
+alias ll="ls -l"
+alias la="ls -la"
+alias a="ls -a"
+
+alias cp="cp -v"
+alias mv="mv -v"
+alias mkdir="mkdir -v"
+
+alias z="vi ~/.zshrc"
+alias b="vi ~/.bashrc"
+alias h="vi ~/.zsh_history"
+
+alias i="sudo apt update && sudo apt install -y"
+alias r="sudo apt autoremove --purge"
+alias s="sudo apt-cache search"
+alias u="sudo apt update && sudo apt upgrade"
+
