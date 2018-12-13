@@ -111,6 +111,7 @@ alias a="ls -a"
 alias cp="cp -v"
 alias mv="mv -v"
 alias mkdir="mkdir -v"
+alias rm="rm -v"
 
 alias z="vi ~/.zshrc"
 alias b="vi ~/.bashrc"
@@ -121,3 +122,4 @@ alias r="sudo apt autoremove --purge"
 alias s="sudo apt-cache search"
 alias u="sudo apt update && sudo apt upgrade"
 
+alias q="exit"
