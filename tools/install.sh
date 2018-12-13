@@ -82,7 +82,6 @@ main() {
     mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
   fi
 
-  printf "${BLUE}Using the Nicks template file and adding it to ~/.zshrc${NORMAL}\n"
   cp "$ZSH_NICKS_THEME"/templates/zshrc.zsh-template ~/.zshrc
   sed "/^export ZSH_NICKS_THEME=/ c\\
   export ZSH_NICKS_THEME=\"$ZSH_NICKS_THEME\"
