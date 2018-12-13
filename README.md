@@ -54,12 +54,8 @@ First install **curl**, **git**, **zsh**, then follow the steps below :
 
 Via *curl* :
 
-    ```
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh)"
-    ```
 
 Via *wget*:
 
-    ```
     sh -c "$(wget https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh -O -)"
-    ```
