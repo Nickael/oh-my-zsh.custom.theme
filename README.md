@@ -11,7 +11,7 @@ You can use this theme with oh-my-zsh.
 * curl or wget
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-## Installation
+## Manual installation
 
 First install **curl**, **git**, **zsh**, then follow the steps below :
 
