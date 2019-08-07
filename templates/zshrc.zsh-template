@@ -126,7 +126,7 @@ if hash apt 2>/dev/null; then
     alias u="sudo apt update && sudo apt upgrade"
 else
     alias i="sudo yum update && sudo yum install -y"
-    alias r="sudo yum autoremove --purge"
+    alias r="sudo yum autoremove"
     alias s="sudo yum search"
     alias u="sudo yum update && sudo yum upgrade"
 fi
