@@ -108,6 +108,6 @@ function nicks_precmd {
 add-zsh-hook precmd nicks_precmd
 
 PROMPT=$'
-%{$turquoise%}%T${PR_RST} %m - %{$purple%}%n${PR_RST}$(virtualenv_info) %{$limegreen%}%~${PR_RST}
+%{$turquoise%}%T${PR_RST} %m - %{$purple%}%n${PR_RST}$(virtualenv_info) %{$green%}%~${PR_RST}
 %(?.%(!.$red.$green).$yellow)%(!.#.$) '
 RPROMPT='$vcs_info_msg_0_'
