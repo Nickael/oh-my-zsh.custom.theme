@@ -102,5 +102,6 @@ main() {
   env zsh -l
 }
 
+echo "\n-$(date +%Y-%m-%d_%H-%M-%S)"
 sh "$ZSH_NICKS_THEME"/tools/insall.oh.my.zsh.sh
 main
