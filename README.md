@@ -9,7 +9,7 @@ You can use this theme with oh-my-zsh.
 * [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * curl or wget
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [oh-my-zsh](https://github.com/nickael/ohmyzsh)
 
 ## Manual installation
 
@@ -20,17 +20,13 @@ First install **curl**, **git**, **zsh**, then follow the steps below :
     Via *curl* :
 
     ```shell
-
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/nickael/ohmyzsh/master/tools/install.sh)"
     ```
 
     Via *wget*:
 
     ```shell
-
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
+    sh -c "$(wget -O- https://raw.githubusercontent.com/nickael/ohmyzsh/master/tools/install.sh)"
     ```
 
 2. Clone and install some useful plugins :
@@ -69,23 +65,6 @@ First install **curl**, **git**, **zsh**, then follow the steps below :
 5. Enable the theme in your zshrc :
 
     ```shell
-
-    ZSH_THEME=nicks
-
+    ZSH_THEME="nicks"
     ```
 
-## Installing using curl or wget
-
-Via *curl* :
-
-```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh)"
-```
-
-Via *wget*:
-
-```shell
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-sh -c "$(wget https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh -O -)"
-```
