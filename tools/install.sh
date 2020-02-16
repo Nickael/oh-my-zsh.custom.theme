@@ -81,10 +81,18 @@ main() {
   fi
 
   cp "$ZSH_NICKS_THEME"/templates/zshrc.zsh-template ~/.zshrc
+  
   sed "/^export ZSH_NICKS_THEME=/ c\\
   export ZSH_NICKS_THEME=\"$ZSH_NICKS_THEME\"
   " ~/.zshrc > ~/.zshrc-omztemp
   mv -f ~/.zshrc-omztemp ~/.zshrc
+
+  printf "${BLUE}Looking for an existing${NORMAL} aliases.sh ${BLUE}...${NORMAL}\n"
+  if [ -f ~/.aliases.sh ] || [ -h ~/.aliases.sh ]; then
+    printf "${YELLOW}Found ~/.zshrc.${NORMAL} ${GREEN}Backing up to ~/.zshrc.pre-oh-my-zsh${NORMAL}\n";
+    mv ~/.aliases.sh ~/.aliases.sh.pre-oh-my-zsh;
+  fi
+  cp "$ZSH_NICKS_THEME"/templates/aliases.sh ~/.aliases.sh
 
   # If this user's login shell is not already "zsh", attempt to switch.
   TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
