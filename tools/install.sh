@@ -81,7 +81,7 @@ main() {
   fi
 
   cp "$ZSH_NICKS_THEME"/templates/zshrc.zsh-template ~/.zshrc
-  
+
   sed "/^export ZSH_NICKS_THEME=/ c\\
   export ZSH_NICKS_THEME=\"$ZSH_NICKS_THEME\"
   " ~/.zshrc > ~/.zshrc-omztemp
@@ -116,4 +116,5 @@ main() {
   env zsh -l
 }
 
+env sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 main
