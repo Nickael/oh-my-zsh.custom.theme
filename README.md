@@ -79,17 +79,13 @@ First install **curl**, **git**, **zsh**, then follow the steps below :
 Via *curl* :
 
 ```shell
-
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh)"
-
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh)"
 ```
 
 Via *wget*:
 
 ```shell
-
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-    sh -c "$(wget https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh -O -)"
-
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/Nickael/oh-my-zsh.custom.theme/master/tools/install.sh -O -)"
 ```
