@@ -19,13 +19,13 @@ setopt prompt_subst
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-local green="%{$fg[green]%}"
-local red="%{$fg[red]%}"
-local cyan="%{$fg[cyan]%}"
-local yellow="%{$fg[yellow]%}"
-local blue="%{$fg[blue]%}"
-local magenta="%{$fg[magenta]%}"
-local white="%{$fg[white]%}"
+local green="%{$fg_bold[green]%}"
+local red="%{$fg_bold[red]%}"
+local cyan="%{$fg_bold[cyan]%}"
+local yellow="%{$fg_bold[yellow]%}"
+local blue="%{$fg_bold[blue]%}"
+local magenta="%{$fg_bold[magenta]%}"
+local white="%{$fg_bold[white]%}"
 local reset="%{$reset_color%}"
 
 #use extended color palette if available
@@ -108,6 +108,6 @@ function nicks_precmd {
 add-zsh-hook precmd nicks_precmd
 
 PROMPT=$'
-%{$turquoise%}%T${PR_RST} %m - %{$purple%}%n${PR_RST}$(virtualenv_info) %{$green%}%~${PR_RST}
+$vcs_info_msg_0_%{$purple%}%n${PR_RST}$(virtualenv_info) %{$green%}%~${PR_RST}
 %(?.%(!.$red.$green).$yellow)%(!.#.$) '
-RPROMPT='$vcs_info_msg_0_'
+RPROMPT='$(virtualenv_info)'
