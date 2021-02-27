@@ -107,7 +107,16 @@ function nicks_precmd {
 }
 add-zsh-hook precmd nicks_precmd
 
+function get_ip () {
+  IFACE=$(ip -4 route | grep default | head -n1 | awk '{print $5}')
+  if [ ! -z $IFACE ]; then
+    echo -n ""; ip -4 -o addr show scope global $IFACE | awk '{gsub(/\/.*/, "",$4); print $4}' | paste -s -d ""
+  else
+    echo -n ""
+  fi
+}
+
 PROMPT=$'
-$vcs_info_msg_0_%{$purple%}%n${PR_RST}$(virtualenv_info) %{$green%}%~${PR_RST}
+$(get_ip) $vcs_info_msg_0_%{$purple%}%n${PR_RST}$(virtualenv_info) %{$green%}%~${PR_RST}
 %(?.%(!.$red.$green).$yellow)%(!.#.$) '
 RPROMPT='$(virtualenv_info)'
