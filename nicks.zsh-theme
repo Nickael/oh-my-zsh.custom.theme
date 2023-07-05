@@ -117,6 +117,6 @@ function get_ip () {
 }
 
 PROMPT=$'
-$(get_ip) $vcs_info_msg_0_%{$purple%}%n${PR_RST}$(virtualenv_info) %{$green%}%~${PR_RST}
+$(get_ip) $vcs_info_msg_0_%{$purple%}%n${PR_RST} %{$green%}%~${PR_RST}
 %(?.%(!.$red.$green).$yellow)%(!.#.$) '
 RPROMPT='$(virtualenv_info)'
