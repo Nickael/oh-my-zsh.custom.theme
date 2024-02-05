@@ -10,7 +10,7 @@
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo ' - ('%F{blue}`basename $VIRTUAL_ENV`%f') '
+    [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f') '
 }
 PR_GIT_UPDATE=1
 
@@ -117,6 +117,6 @@ function get_ip () {
 }
 
 PROMPT=$'
-$(get_ip) $vcs_info_msg_0_%{$purple%}%n${PR_RST} %{$green%}%~${PR_RST}
+$vcs_info_msg_0_%{$purple%}%n${PR_RST} %{$green%}%~${PR_RST}
 %(?.%(!.$red.$green).$yellow)%(!.#.$) '
 RPROMPT='$(virtualenv_info)'
